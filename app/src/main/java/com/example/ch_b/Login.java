@@ -23,8 +23,8 @@ public class Login extends AppCompatActivity {
     SharedPreferences sPref;
     public static MaskUser User;
     EditText etEmail, etPassword;
-    final static String EmailUser = "";
-    final static String PasswordUser = "";
+    final static String EmailUser = "Email";
+    final static String PasswordUser = "Password";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
