@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<MaskUser> call, Response<MaskUser> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(Login.this, "Пользователь с такой почтой и паролем не найден", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Пользователь с такой почтой и паролем не существует", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(response.body() != null)
