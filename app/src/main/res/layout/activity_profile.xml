@@ -60,6 +60,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dateUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/header"
@@ -95,6 +96,17 @@
                 android:fontFamily="@font/alegreya"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <GridView
+            android:id="@+id/lvImageProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/dateUser"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            android:numColumns="2"
+            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bottom"

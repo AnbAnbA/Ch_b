@@ -66,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
         imageProfile = findViewById(R.id.ivProfile);
         new AdapterMaskQuote.DownloadImageTask((ImageView) imageProfile)
-                .execute(Login.User.getAvatar());
+                .execute(Onboarding.image);
 
         textHello = findViewById(R.id.hello);
-        textHello.setText(textHello.getText().toString() + Login.User.getNickName() + "!");
+        textHello.setText(textHello.getText().toString() + Onboarding.Name+ "!");
 
 
     }

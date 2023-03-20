@@ -1,5 +1,6 @@
 package com.example.ch_b;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -33,6 +34,13 @@ public class Login extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         getData();
+        SharedPreferences prefs = this.getSharedPreferences(
+                "Date", Context.MODE_PRIVATE); // Получение данных о пользователе
+        if(prefs != null)
+        {
+            etEmail.setText(prefs.getString("Email", ""));
+            etPassword.requestFocus();
+        }
     }
 
     public void nextMain(View v)
@@ -80,6 +88,12 @@ public class Login extends AppCompatActivity {
                 {
                     if(response.body().getToken() != null)
                     {
+                        SharedPreferences prefs = getSharedPreferences( "Date", Context.MODE_PRIVATE);
+                        prefs.edit().putString("Email", "" + email).apply();
+                        prefs.edit().putString("image", "" + response.body().getAvatar()).apply();
+                        prefs.edit().putString("Name", "" + response.body().getNickName()).apply();
+                        Onboarding.image = response.body().getAvatar();
+                        Onboarding.Name = response.body().getNickName();
                         saveData();
                         User = response.body();
                         Intent intent = new Intent(Login.this, MainActivity.class);
