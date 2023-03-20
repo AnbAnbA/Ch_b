@@ -31,7 +31,7 @@ public class Onboarding extends AppCompatActivity {
             }
         }
     }
-    // получение ранее сохраненного состояния
+
 
 
     public void nextRegistrarion(View v)

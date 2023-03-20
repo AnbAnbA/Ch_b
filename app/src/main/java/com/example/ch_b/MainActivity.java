@@ -77,14 +77,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
 
         outState.putString(userVariableKey, "fgfggf");
-        //outState.putSerializable(userVariableKey, (Serializable) Login.User);
         super.onSaveInstanceState(outState);
     }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        // получаем объект User в переменную
-        //Login.User = (MaskUser) savedInstanceState.getSerializable(userVariableKey);
         String str = savedInstanceState.getString(userVariableKey);
         textHello.setText(str);
     }
@@ -139,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (Exception exception)
             {
-                Toast.makeText(MainActivity.this, "При выводе данных возникла ошибка", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Ошибка!", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -196,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (Exception exception)
             {
-                Toast.makeText(MainActivity.this, "При выводе данных возникла ошибка", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Ошибка!", Toast.LENGTH_SHORT).show();
             }
         }
     }

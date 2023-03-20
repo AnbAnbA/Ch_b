@@ -113,7 +113,7 @@ public class Login extends AppCompatActivity {
 
     public  void saveData()
     {
-        // получаем введенные данные
+
 
         sPref=getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed=sPref.edit();
@@ -125,7 +125,7 @@ public class Login extends AppCompatActivity {
 
     public void getData()
     {
-        // получаем сохраненные данные
+
         sPref=getPreferences(MODE_PRIVATE);
         String emailUser=sPref.getString(EmailUser,"");
         String passwordUser=sPref.getString(PasswordUser,"");

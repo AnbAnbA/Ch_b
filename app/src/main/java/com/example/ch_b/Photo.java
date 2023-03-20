@@ -14,7 +14,7 @@ import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 
 public class Photo extends AppCompatActivity {
-    SubsamplingScaleImageView imageView; // Изображение
+    SubsamplingScaleImageView imageView;
     View view;
 
     @Override

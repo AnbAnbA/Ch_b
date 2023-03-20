@@ -63,7 +63,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 MaskProfileImage mask = list.get(i);
-                if(mask.getImageProfile() == null) // Если нажали на последний элемент, то это кнопка добавления фотографии
+                if(mask.getImageProfile() == null)
                 {
                     addImage();
                 }
@@ -94,7 +94,7 @@ public class Profile extends AppCompatActivity {
 
     public void nextLogin(View view)
     {
-        SharedPreferences prefs = getSharedPreferences( // Сохранение данных
+        SharedPreferences prefs = getSharedPreferences(
                 "Date", Context.MODE_PRIVATE);
         prefs.edit().putString("Avatar", "").apply();
         prefs.edit().putString("NickName", "").apply();
@@ -104,7 +104,7 @@ public class Profile extends AppCompatActivity {
 
 
 
-    private void GetImageProfile() // Заполнение картинок из папки
+    private void GetImageProfile()
     {
         File dir = new File(getApplicationInfo().dataDir + "/MyFiles/");
         dir.mkdirs();
@@ -126,7 +126,7 @@ public class Profile extends AppCompatActivity {
             list.add(tempProduct);
             pAdapter.notifyDataSetInvalidated();
         }
-        MaskProfileImage tempProduct = new MaskProfileImage( // Последним элементом будет кнопка
+        MaskProfileImage tempProduct = new MaskProfileImage(
                 j,
                 null,
                 null,
@@ -136,7 +136,7 @@ public class Profile extends AppCompatActivity {
         pAdapter.notifyDataSetInvalidated();
     }
 
-    public static final String getFullTime(final long timeInMillis) // Преобразование из милисикунд в формат часы:минуты
+    public static final String getFullTime(final long timeInMillis)
     {
         final SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         final Calendar c = Calendar.getInstance();
@@ -145,7 +145,7 @@ public class Profile extends AppCompatActivity {
         return format.format(c.getTime());
     }
 
-    public void addImage() // Добавление фотографии
+    public void addImage()
     {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -170,9 +170,9 @@ public class Profile extends AppCompatActivity {
                         }
                         File dir = new File(getApplicationInfo().dataDir + "/MyFiles/");
                         dir.mkdirs(); // Проверка наличия католога и его создание
-                        File file = new File(dir, System.currentTimeMillis() + ".jpg"); // Создание файла
+                        File file = new File(dir, System.currentTimeMillis() + ".jpg");
                         try {
-                            outputStream = new FileOutputStream(file); // Отправка данных в файл на диске
+                            outputStream = new FileOutputStream(file);
                             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
                             outputStream.flush();
                             outputStream.close();

@@ -43,13 +43,13 @@ public class AdapterMaskProfileImage extends BaseAdapter
 
         MaskProfileImage maskProfileImage  = maskList.get(position);
         View v = null;
-        if(maskProfileImage.getImageProfile() == null) // Если картинка не указана, то это последний элемент
+        if(maskProfileImage.getImageProfile() == null)
         {
-            v = View.inflate(mContext,R.layout.item_profile_image_add,null); // Выводится форма с кнопкой
+            v = View.inflate(mContext,R.layout.item_profile_image_add,null);
         }
         else
         {
-            v = View.inflate(mContext,R.layout.item_profile_image,null); // Вывод стандартной формы
+            v = View.inflate(mContext,R.layout.item_profile_image,null);
 
             ImageView Image = v.findViewById(R.id.image);
             TextView dateCreat = v.findViewById(R.id.dateCreat);
