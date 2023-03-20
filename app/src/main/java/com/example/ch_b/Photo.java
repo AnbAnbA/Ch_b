@@ -29,44 +29,6 @@ public class Photo extends AppCompatActivity {
             Bitmap myBitmap = BitmapFactory.decodeFile(Profile.maskProfileImage.getImageProfile().getAbsolutePath());
             imageView.setImage(ImageSource.bitmap(myBitmap));
         }
-        imageView.setOnTouchListener(new OnSwipeTouchListener(Photo.this) { // Добавляем обработку смахивания
-            public void onSwipeRight() {
-                Profile.maskProfileImage = null;
-                startActivity(new Intent(Photo.this, Profile.class));
-            }
-            public void onSwipeLeft() {
-                try {
-                    Profile.maskProfileImage.imageProfile.delete();
-                    Profile.maskProfileImage = null;
-                    Toast.makeText(Photo.this, "Фотография успешно удалена", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Photo.this, Profile.class));
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(Photo.this, "При удаление фотографии возникла ошибка!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        view = findViewById(R.id.view);
-        view.setOnTouchListener(new OnSwipeTouchListener(Photo.this) { // Добавляем обработку смахивания
-            public void onSwipeRight() {
-                Profile.maskProfileImage = null;
-                startActivity(new Intent(Photo.this, Profile.class));
-            }
-            public void onSwipeLeft() {
-                try {
-                    Profile.maskProfileImage.imageProfile.delete();
-                    Profile.maskProfileImage = null;
-                    Toast.makeText(Photo.this, "Фотография успешно удалена", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Photo.this, Profile.class));
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(Photo.this, "При удаление фотографии возникла ошибка!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
     public void Close(View view)
